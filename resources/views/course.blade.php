@@ -20,8 +20,8 @@
                             <div>
                                 <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Course Name</label>
                                 <input type="text" name="course_name" value="{{ old('course_name') }}"
-                                       placeholder="Enter course name" required
-                                       class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">
+                                        placeholder="Enter course name" required
+                                        class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">
                                 @error('course_name')
                                     <p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
                                 @enderror
@@ -30,7 +30,7 @@
                             <div class="md:col-span-2">
                                 <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Description</label>
                                 <textarea name="description" rows="1" placeholder="Enter course description"
-                                          class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">{{ old('description') }}</textarea>
+                                        class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">{{ old('description') }}</textarea>
                                 @error('description')
                                     <p class="mt-1 text-xs text-red-600 dark:text-red-400">{{ $message }}</p>
                                 @enderror
@@ -75,7 +75,7 @@
                                             </button>
                                             <span class="mx-1 text-neutral-400">|</span>
                                             <form action="{{ route('courses.destroy', $course) }}" method="POST" class="inline"
-                                                  onsubmit="return confirm('Are you sure? This will unassign all students from this course.')">
+                                                    onsubmit="return confirm('Are you sure? This will unassign all students from this course.')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="text-red-600 transition-colors hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">
@@ -111,14 +111,14 @@
                     <div>
                         <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Course Name</label>
                         <input type="text" id="edit_course_name" name="course_name" required
-                               class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">
+                                class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100">
                     </div>
 
 
                     <div class="md:col-span-2">
                         <label class="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300">Description</label>
                         <textarea id="edit_description" name="description" rows="3"
-                                  class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100"></textarea>
+                                    class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100"></textarea>
                     </div>
                 </div>
 

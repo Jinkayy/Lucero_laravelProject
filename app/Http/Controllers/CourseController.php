@@ -7,6 +7,10 @@ use App\Models\Course;
 
 class CourseController extends Controller
 {
+    /**
+     * Display the courses page
+     * Shows all courses in the database
+     */
     public function index()
     {
 
@@ -14,6 +18,10 @@ class CourseController extends Controller
         return view('course', compact('courses'));
     }
 
+    /**
+     * Store a new course in database
+     * Validates input then creates course
+     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -22,10 +30,13 @@ class CourseController extends Controller
         ]);
 
         Course::create($validated);
-        return redirect()->back()->with('success', 'Course added successfully!');
+        return redirect()->back()->with('success', 'Course added successfully.');
     }
 
-
+    /**
+     * Update an existing course
+     * Finds course by ID and updates it
+     */
     public function update(Request $request, Course $course)
     {
         $validated = $request->validate([
@@ -35,13 +46,16 @@ class CourseController extends Controller
 
 
         $course->update($validated);
-        return redirect()->back()->with('success', 'Course updated successfully!');
+        return redirect()->back()->with('success', 'Course updated successfully.');
     }
 
-
-    public function destroy(Course $course) 
+    /**
+     * Delete a course from database
+     * Removes course by ID
+     */
+    public function destroy(Course $course)
     {
         $course->delete();
-        return redirect()->back()->with('success', 'Course deleted successfully!');
+        return redirect()->back()->with('success', 'Course deleted successfully.');
     }
 }
